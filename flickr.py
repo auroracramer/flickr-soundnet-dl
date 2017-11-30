@@ -340,7 +340,7 @@ def extract_flickr_id(url):
         flickr_id:  Flickr ID string
                     (Type: str)
     """
-    return url.split('/')[-4]
+    return url.strip('/').split('/')[-4]
 
 
 def download_video(url, ffmpeg_path, ffprobe_path, data_dir=None, video_output_path=None,
@@ -823,8 +823,6 @@ def download_flickr_dataset(dataset_path, data_dir, ffmpeg_path, ffprobe_path,
     try:
         with open(dataset_path, 'r') as f:
             for line_idx, line in enumerate(f):
-                if line_idx == 5:
-                    break
                 url = line.strip()
                 media_filename = extract_flickr_id(url)
                 video_filepath = os.path.join(data_dir, 'video', media_filename + '.' + ffmpeg_cfg.get('video_format', 'mp4'))
