@@ -5,6 +5,7 @@ Dependencies
 * Python 3
 * [ffmpeg](http://www.ffmpeg.org) (and ffprobe)
 * `libsndfile1`
+* [sox](http://sox.sourceforge.net/)
 
 You can install the Python dependencies with `pip install -r requirements.txt`
 
