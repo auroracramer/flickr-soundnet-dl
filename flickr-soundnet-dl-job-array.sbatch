@@ -7,8 +7,8 @@
 #SBATCH --time=7-0
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=name@domain.com
-#SBATCH --output="audioset-dl-%A-%a.out"
-#SBATCH --err="audioset-dl-%A-%a.err"
+#SBATCH --output="flickr-soundnet-dl-%A-%a.out"
+#SBATCH --err="flickr-soundnet-dl-%A-%a.err"
 
 SRCDIR=$HOME/dev/flickr-soundnet-dl
 FFMPEG_DIR=$HOME/audiosetdl/bin/ffmpeg

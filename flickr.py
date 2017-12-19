@@ -8,7 +8,6 @@ import logging.handlers
 import multiprocessing as mp
 import multiprocessing_logging
 import soundfile as sf
-from skvideo.io import vread
 import sys
 import re
 import os
@@ -143,7 +142,7 @@ def parse_arguments():
     parser.add_argument('dataset_path',
                         action='store',
                         type=str,
-                        help='Path to file containing flickr video URLs')
+                        help='Path to file containing Flickr video URLs')
 
     parser.add_argument('data_dir',
                         action='store',
@@ -776,7 +775,9 @@ def download_flickr_dataset(dataset_path, data_dir, ffmpeg_path, ffprobe_path,
     Downloads Flickr dataset files
 
     Args:
-        dataset_path:
+        dataset_path:  Path to dataset file containin URLs
+                       (Type: str)
+
         data_dir:      Output directory where video will be saved if output
                        path is not explicitly given
                        (Type: str)
